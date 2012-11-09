@@ -9,8 +9,12 @@
       <div class="well">
         <label>Name:</label>
         <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <br>
+        <input type="text" ng-model="yourName" placeholder="or here">
         <hr>
         <h4>Hello {{yourName}}!</h4>
+        <h4 ng-show="yourName">Hello {{yourName}}, since you exist!</h4>
+        <p class="{{yourName}}">I might be muted, text-error</p>
       </div>
     </div>
   </body>
