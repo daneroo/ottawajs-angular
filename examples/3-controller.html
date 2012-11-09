@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="3-controller.js"></script>
+  </head>
+  <body style="margin-top:3px">
+    <div ng-init="outer='OuterScope'">
+    <div ng-controller="LogCtrl" class="container">
+      <h4>Ops Center Logging</h4>
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr><th width="5%">Stamp</th><th width="5%">Level</th><th>Message</th></tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="entry in entries">
+            <td class="time">{{entry.stamp |date:"HH:mm:ss" }}</td>
+            <td class="text-{{entry.level}}">{{entry.level}}</td>
+            <td class="message">{{entry.msg}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
