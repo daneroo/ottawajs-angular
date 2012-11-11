@@ -39,7 +39,7 @@
         <!-- <img src="http://angularjs.org/img/AngularJS-large.png" style="padding:20px; border-color:#777"> -->
         <img src="https://raw.github.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-medium.png" style="padding:20px; border-color:#777">
         
-                
+
         <!-- <h1>Angular<span style="color:red">JS</span></h1> -->
         <h2 style="text-transform:none; ">AngularJS in Realtime</h2>
         <p>OttawaJS November Meetup</p>
@@ -47,7 +47,7 @@
           <small>by <a href="http://daniel-lauzon.com">Daniel Lauzon</a> / 
             @<a href="http://twitter.com/daneroo">daneroo</a> / 
             g:<a href="https://github.com/daneroo">daneroo</a>
-            </small>
+          </small>
         </p>
         <img src="http://ottawajs.org/logo/OttawaJS.png" style="width:64px;border:0;background:none;box-shadow:none">
       </section>
@@ -77,16 +77,16 @@
         <h4>From Scratch - Boom!</h4>
         <!-- http://htmlentities.net/ -->
         <pre><code style="font-size:80%" contenteditable>&lt;!doctype html&gt;
-&lt;html ng-app&gt;
-  &lt;head&gt;
-    &lt;script src=&quot;http://.../angular.min.js&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;              
-      &lt;label&gt;Name:&lt;/label&gt;
-      &lt;input type=&quot;text&quot; ng-model=&quot;yourName&quot;&gt;
-      &lt;h3&gt;Hello {{yourName}}!&lt;/h3&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
+          &lt;html ng-app&gt;
+          &lt;head&gt;
+          &lt;script src=&quot;http://.../angular.min.js&quot;&gt;&lt;/script&gt;
+          &lt;/head&gt;
+          &lt;body&gt;              
+          &lt;label&gt;Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;yourName&quot;&gt;
+          &lt;h3&gt;Hello {{yourName}}!&lt;/h3&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
         </code></pre>
         <ul style="float:left">
           <li><a href="examples/1-minimal.html" target="_blank">full</a></li>
@@ -105,6 +105,26 @@
           </ul>
         </section>
 
+  
+        <section>
+        <pre><code style="font-size:80%" contenteditable>
+&lt;div ng-controller=&quot;LogCtrl&quot; class=&quot;container&quot;&gt;
+  &lt;h4&gt;Ops Center Logging&lt;/h4&gt;
+  &lt;table class=&quot;table table-condensed table-hover&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th width=&quot;5%&quot;&gt;Stamp&lt;/th&gt;&lt;th width=&quot;5%&quot;&gt;Critical&lt;/th&gt;&lt;th&gt;Message&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr ng-repeat=&quot;entry in entries&quot;&gt;
+        &lt;td class=&quot;category&quot;&gt;{{entry.level}}&lt;/td&gt;
+        &lt;td class=&quot;time&quot;&gt;{{entry.stamp |date:&quot;HH:mm:ss&quot; }}&lt;/td&gt;
+        &lt;td class=&quot;message&quot;&gt;{{entry.msg}}&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+        </code></pre>
+        </section>
         <section>
           <iframe src="examples/3-controller.html" height="400" width="80%"></iframe>
         </section>
@@ -131,7 +151,7 @@
           <small>by <a href="http://daniel-lauzon.com">Daniel Lauzon</a> / 
             @<a href="http://twitter.com/daneroo">daneroo</a> / 
             g:<a href="https://github.com/daneroo">daneroo</a>
-            </small>
+          </small>
         </p>
         <img src="http://ottawajs.org/logo/OttawaJS.png" style="width:64px;border:0;background:none;box-shadow:none">
       </section>
@@ -166,7 +186,7 @@
     ]
   });
 
-  </script>
+</script>
 
 </body>
 </html>
