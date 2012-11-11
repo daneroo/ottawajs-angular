@@ -12,16 +12,16 @@
     <table class="table table-condensed table-hover">
       <thead>
         <tr><th width="5%">Stamp</th><th width="5%">Critical</th><th>Message</th></tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr ng-repeat="entry in entries">
-          <td class="category">{{entry.level}}</td>
-          <td class="time">{{entry.stamp |date:"HH:mm:ss" }}</td>
-          <td class="message">{{entry.msg}}</td>
-      </tr>
-  </tbody>
-</table>
-</div>
+          <td>{{entry.stamp |date:"HH:mm:ss" }}</td>
+          <td class="text-{{entry.level}}">{{entry.level}}</td>
+          <td>{{entry.msg}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
     <!-- <form class="form-inline pull-right">
     <label>Lines to show:</label>
@@ -30,7 +30,7 @@
       <option value="5">5</option>
       <option ng-repeat="i in [15,25]" value="{{i}}">{{i}}</option>
     </select>
-</form> -->
+  </form> -->
 
 </body>
 </html>
