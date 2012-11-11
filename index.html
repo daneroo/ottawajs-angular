@@ -117,9 +117,9 @@
     &lt;/thead&gt;
     &lt;tbody&gt;
       &lt;tr ng-repeat=&quot;entry in entries&quot;&gt;
-        &lt;td class=&quot;category&quot;&gt;{{entry.level}}&lt;/td&gt;
-        &lt;td class=&quot;time&quot;&gt;{{entry.stamp |date:&quot;HH:mm:ss&quot; }}&lt;/td&gt;
-        &lt;td class=&quot;message&quot;&gt;{{entry.msg}}&lt;/td&gt;
+        &lt;td&gt;{{entry.level}}&lt;/td&gt;
+        &lt;td class="text-{{entry.level}}"&gt;{{entry.stamp |date:&quot;HH:mm:ss&quot; }}&lt;/td&gt;
+        &lt;td&gt;{{entry.msg}}&lt;/td&gt;
       &lt;/tr&gt;
     &lt;/tbody&gt;
   &lt;/table&gt;
@@ -131,12 +131,11 @@
           <h3>The controller</h3>
           <pre><code style="font-size:80%" contenteditable>
 function LogCtrl($scope) {
-  var now=+new Date();
   $scope.entries = [
-    {stamp:new Date(now-161000),level:'success',msg:'Operations Start'},
-    {stamp:new Date(now-61000),level:'info',msg:'Operations Normal'},
-    {stamp:new Date(now-32000),level:'warning',msg:'It\'s getting warm in here'},
-    {stamp:new Date(),level:'error',msg:'Something bad happened'}
+    {stamp:new Date(),level:'success',msg:'Operations Start'},
+    {stamp:new Date(),level:'info',   msg:'Operations Normal'},
+    {stamp:new Date(),level:'warning',msg:'It\'s getting warm in here'},
+    {stamp:new Date(),level:'error',  msg:'Something bad happened'}
   ];
 }          </code></pre>
         </section>
