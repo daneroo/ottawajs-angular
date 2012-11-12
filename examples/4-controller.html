@@ -3,35 +3,31 @@
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
-  <script src="3-controller.js"></script>
+  <script src="4-controller.js"></script>
 </head>
 <body style="margin-top:3px">
   <div ng-init="outer='OuterScope'"></div>
   <div ng-controller="LogCtrl" class="container">
     <h4>Ops Center Logging</h4>
+    <!-- 1-adding a button -->
+    <button class="btn btn-primary" ng-click="addOne()">Add an entry</button>
+    <!-- 2- add a filter -->
+    Search: <input ng-model="search"><br>
     <table class="table table-condensed table-hover">
       <thead>
         <tr><th width="5%">Stamp</th><th width="5%">Critical</th><th>Message</th></tr>
       </thead>
       <tbody>
-        <tr ng-repeat="entry in entries">
+        <tr ng-repeat="entry in entries | filter:search">
           <td>{{entry.stamp |date:"HH:mm:ss" }}</td>
           <td class="text-{{entry.level}}">{{entry.level}}</td>
           <td>{{entry.msg}}</td>
         </tr>
       </tbody>
     </table>
-    <button class="btn btn-primary" ng-click="addOne()">Add an entry</button>
+    <!-- 3- filtered count -->
+    <div>{{areVisible()}} of {{entries.length}} entries are visible</div>
   </div>
-
-    <!-- <form class="form-inline pull-right">
-    <label>Lines to show:</label>
-    <select style="width:4em" ng-model="linesToShow">
-      <option value="2">2</option>
-      <option value="5">5</option>
-      <option ng-repeat="i in [15,25]" value="{{i}}">{{i}}</option>
-    </select>
-  </form> -->
 
 </body>
 </html>
