@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="loggerApp">
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script src="5-directive.js"></script>
+</head>
+<body style="margin-top:3px">
+  <div ng-controller="LogCtrl" class="container">
+    <span ng-repeat="(lvl,btnLvl) in {'info':'info','success':'success','warning':'warning','error':'danger'}">
+      <button class="btn btn-{{btnLvl}}" ng-click="addOne(lvl,lvl+' message '+rand())">
+        Log a {{lvl}}
+      </button>
+    </span>
+    <!-- <div class="logtable" entries="entries" limit="1"></div> -->
+    <logtable entries="entries" level="info" limit="2"></logtable>
+    <logtable entries="entries" level="error" limit="3"></logtable>
+    <logtable entries="entries" limit="6"></logtable>
+  </div>
+
+</body>
+</html>
