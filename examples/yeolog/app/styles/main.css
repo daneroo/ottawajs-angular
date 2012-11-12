@@ -1,1 +1,7 @@
+/*@import url("bootstrap.css");*/
+@import url("http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css");
 /* Will be compiled down to a single stylesheet with your sass files */
+
+body {
+    margin-top: 15px;
+}

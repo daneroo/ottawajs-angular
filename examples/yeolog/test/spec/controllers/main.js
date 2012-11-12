@@ -16,7 +16,21 @@ describe('Controller: MainCtrl', function() {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function() {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach a list of log entries to the scope', function() {
+    expect(scope.entries.length).toBe(4);
+  });
+
+  it('should prepend an entry', function() {
+    var count=scope.entries.length;
+    scope.addOne('error','my message');
+    expect(scope.entries.length).toBe(count+1);
+    expect(scope.entries[0].level).toBe('error');
+    expect(scope.entries[0].msg).toBe('my message');
+  });
+
+  it('addOne default value is info', function() {
+    scope.addOne(null,'Hello');
+    expect(scope.entries[0].level).toBe('info');
+    expect(scope.entries[0].msg).toBe('Hello');
   });
 });

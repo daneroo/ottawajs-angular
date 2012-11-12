@@ -1,9 +1,11 @@
-<div class="hero-unit">
-  <h1>Cheerio!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+
+<div class="container">
+    <span ng-repeat="(lvl,btnLvl) in {'info':'info','success':'success','warning':'warning','error':'danger'}">
+      <button class="btn btn-{{btnLvl}}" ng-click="addOne(lvl,lvl+' message '+rand())">
+        Log a {{lvl}}
+      </button>
+    </span>
+    <logtable entries="entries" level="info" limit="5"></logtable>
+    <logtable entries="entries" level="error" limit="3"></logtable>
+    <logtable entries="entries" limit="10"></logtable>
 </div>
