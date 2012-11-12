@@ -9,6 +9,7 @@
         <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
@@ -23,8 +24,21 @@
             <script src="scripts/vendor/json3.min.js"></script>
         <![endif]-->
 
+        <div class="navbar not-navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">                    
+            <a class="brand" href="#">Yeo Logger</a>
+            <ul class="nav pull-right" ng-show="loggedIn">
+              <li><a href="#/acount" ><i class="icon-user"></i> Guest</a></li>
+              <li class="divider-vertical" />
+              <li><a href="#/login" ng-click="loggedIn=false">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        </div> <!-- /navbar -->
+
         <!-- Add your site or application content here -->
-        <div class="container" ng-view></div>
+        <div class="container" style="margin-top:10px" ng-view></div>
 
         <script src="scripts/vendor/angular.js"></script>
 
@@ -32,14 +46,10 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/directives/logtable.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        <!-- // <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
+        <!-- // <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>    -->
     </body>
 </html>

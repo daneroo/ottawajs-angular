@@ -1,5 +1,5 @@
 
-<div class="container">
+<div>
     <span ng-repeat="(lvl,btnLvl) in {'info':'info','success':'success','warning':'warning','error':'danger'}">
       <button class="btn btn-{{btnLvl}}" ng-click="addOne(lvl,lvl+' message '+rand())">
         Log a {{lvl}}
